@@ -670,6 +670,28 @@
       <strong>Si quelque chose casse</strong>
       Aller directement dans le sous-onglet <span class="xref-wp" data-tab="admin" data-anchor="a-troubleshooting">Le back-office → Si ça casse</span> — playbook des incidents fréquents (site down, login KO, photos disparues, newsletter qui ne synchronise plus, etc.) avec la résolution en quelques étapes pour chacun.
     </div>
+
+    <div class="card">
+      <h4>Où est hébergé ce guide</h4>
+      <p>Cette page est servie par <strong>GitHub Pages</strong> sur le compte <code>orga-cug38</code> (repo <a href="https://github.com/orga-cug38/guide-site-web" target="_blank" rel="noopener">orga-cug38/guide-site-web</a>). Le guide est volontairement <strong>non indexé</strong> par les moteurs de recherche (<code>robots.txt</code> + meta <code>noindex</code>) — il n'est ouvrable que par lien direct.</p>
+      <dl class="kv" style="margin-top:10px">
+        <dt>URL publique</dt><dd><a href="https://orga-cug38.github.io/guide-site-web/" target="_blank" rel="noopener">orga-cug38.github.io/guide-site-web/</a></dd>
+        <dt>Compte GitHub</dt><dd><code>orga-cug38</code> — connexion via <strong>SSO Google</strong> avec <code>orga@cug38.fr</code> (bouton <em>Continue with Google</em> sur la page de login). Pas de mot de passe GitHub propre à retenir.</dd>
+        <dt>Hébergement</dt><dd>GitHub Pages, gratuit, tant que le compte reste actif et que le repo reste public.</dd>
+      </dl>
+    </div>
+
+    <div class="card">
+      <h4>Modifier ou mettre à jour ce guide</h4>
+      <p>Le plus simple : ouvrir <strong>Claude Cowork</strong> (ou un agent IA équivalent qui sait piloter Playwright / un navigateur et faire un <code>git push</code>) et lui demander en langage naturel ce qu'on veut changer. Exemples de demandes&nbsp;:</p>
+      <ul>
+        <li><em>« Ajoute une section sur la nouvelle extension X dans Le back-office, à côté de Password Protect WordPress. »</em></li>
+        <li><em>« Mets à jour le screenshot de la page d'accueil avec la nouvelle saison. »</em></li>
+        <li><em>« Pousse les derniers changements sur GitHub Pages. »</em></li>
+      </ul>
+      <p>Pour pousser, Claude aura besoin d'un <strong>Personal Access Token GitHub</strong> à scope <code>repo</code> (à générer sur <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">github.com/settings/tokens</a> et à supprimer après usage) — Claude se chargera du <code>git commit</code> + <code>git push</code> et de relancer le build Pages.</p>
+      <p>Pour une modif ponctuelle sans Claude, on peut aussi éditer un fichier directement sur l'interface GitHub (bouton crayon en haut à droite d'un fichier dans le repo) — utile pour corriger une faute de frappe, mais peu pratique pour une vraie restructuration.</p>
+    </div>
   </div>
 
   <div class="sub-panel" id="g-domaine">
