@@ -1059,7 +1059,7 @@
 
   <div class="sub-panel" id="pages-choeur">
     <h2 class="section">Le chœur</h2>
-    <p class="section-intro">Page de présentation du chœur : qui on est, qui le dirige, et l'histoire de l'ensemble. Tout est en contenu statique éditable directement dans Elementor.</p>
+    <p class="section-intro">Page de présentation du chœur : qui on est, qui le dirige, l'équipe administrative et l'histoire de l'ensemble. La plupart des sections sont en contenu statique Elementor, mais <strong>la section CA est désormais alimentée par les articles</strong> (catégorie CA).</p>
 
     <img src="screenshots/page_le_choeur_crop.png" alt="Vue de la page Le chœur (haut de page)">
     <div class="caption">La page Le chœur côté public, du haut en bas.</div>
@@ -1067,14 +1067,20 @@
     <h3 class="sub">Les sections et quand les toucher</h3>
     <div class="card">
       <dl class="kv">
-        <dt>Le CUG en chiffres</dt><dd>Intro + 4 stats clés + photo de groupe. <em>À actualiser chaque rentrée</em> si effectifs/horaires changent.</dd>
-        <dt>Des concerts · Des weekends</dt><dd>Paragraphes + photos (avec sous-sections weekend d'intégration / montagne). <em>Remplacer les photos</em> après chaque saison.</dd>
-        <dt>Anne Laffilhe · Lorraine Tisserant</dt><dd>Portrait + bio direction musicale / tutrice vocale. <em>À mettre à jour</em> quand les personnes changent.</dd>
-        <dt>Le CA</dt><dd>Portraits + bios courtes. <em>À renouveler après chaque AG annuelle</em>.</dd>
+        <dt>Le CUG en chiffres</dt><dd>Intro + 4 stats clés + photo de groupe. <em>À actualiser chaque rentrée</em> si effectifs/horaires changent. Édition Elementor directe.</dd>
+        <dt>Des concerts · Des weekends</dt><dd>Paragraphes + photos (avec sous-sections weekend d'intégration / montagne). <em>Remplacer les photos</em> après chaque saison. Édition Elementor directe.</dd>
+        <dt>Anne Laffilhe · Lorraine Tisserant</dt><dd>Portrait + bio direction musicale / tutrice vocale. <em>À mettre à jour</em> quand les personnes changent. Édition Elementor directe.</dd>
+        <dt>Le CA <span class="pill" style="background:#7c3aed;color:white">content-driven</span></dt><dd>Trombinoscope (rôle + nom + photo) <strong>alimenté automatiquement par les articles de catégorie CA</strong>. <em>À renouveler après chaque AG annuelle</em> — uniquement via les articles, plus jamais d'édition Elementor. Voir <span class="xref-wp" data-tab="admin" data-anchor="a-ca">Articles → catégorie CA</span>.</dd>
         <dt>Une histoire</dt><dd>Frise chronologique 1944 → aujourd'hui. <em>Ajouter une étape</em> aux anniversaires / événements marquants — copier-coller une étape existante (<span class="xref-elementor" data-tab="design" data-anchor="d-copier">voir Copier-coller</span>).</dd>
       </dl>
     </div>
-    <p style="margin-top:10px">Tout s'édite dans Elementor (<span class="xref-elementor" data-tab="design" data-anchor="d-ouvrir">Ouvrir une page</span>). Quelques subtilités :</p>
+
+    <div class="callout info">
+      <strong>Section CA : le réflexe à avoir</strong>
+      Pour <strong>tout changement dans le CA</strong> (nouveau membre, départ, changement de rôle), passer par <span class="xref-wp" data-tab="admin" data-anchor="a-ca">Articles → catégorie CA</span>, jamais par Elementor. Le Loop Grid de la page Le chœur lit la catégorie CA et trie les membres par leur champ <em>Ordre</em> (menu_order) — pas besoin de toucher au template ni à l'agencement. Pour <strong>réordonner</strong> les membres, éditer le champ <em>Ordre</em> dans la sidebar Gutenberg d'un article (Attributs de page).
+    </div>
+
+    <p style="margin-top:10px">Pour les sections statiques (toutes sauf le CA), édition Elementor classique (<span class="xref-elementor" data-tab="design" data-anchor="d-ouvrir">Ouvrir une page</span>). Quelques subtilités :</p>
     <ul>
       <li>Certaines photos pleine largeur sont des <em>backgrounds de Conteneur</em>, pas des widgets Image — ouvrir le Conteneur et changer l'image de fond pour les modifier.</li>
       <li>La frise <em>Une histoire</em> est composée de Conteneurs Elementor en série, pas d'un widget Timeline dédié — pour ajouter une étape, on copie-colle un Conteneur existant (<span class="xref-elementor" data-tab="design" data-anchor="d-copier">Copier-coller</span>).</li>
@@ -1157,49 +1163,63 @@
   </div>
 
   <div class="sub-panel" id="pages-billetterie">
-    <h2 class="section">Billetterie</h2>
-    <p class="section-intro">Page consacrée au <strong>concert à venir en cours de billetterie</strong>. À tout moment, elle présente UN concert (parfois deux dates) — pas un catalogue. Elle est <strong>réécrite à chaque nouvelle saison de billetterie</strong>, avec un nouveau visuel, un nouveau texte et de nouvelles dates.</p>
+    <h2 class="section">Billetterie <span class="pill" style="background:#7c3aed;color:white">content-driven</span></h2>
+    <p class="section-intro">Page consacrée au <strong>concert à venir en cours de billetterie</strong>. À tout moment, elle présente UN concert (parfois deux dates) — pas un catalogue. <strong>Depuis la refonte de juin 2026, tout le contenu (affiche, titre, description, dates, boutons HelloAsso, carte) est dans un article</strong> — on ne touche plus à Elementor pour changer de billetterie.</p>
 
     <img src="screenshots/page_billetterie.png" alt="Vue complète de la page Billetterie">
     <div class="caption">Exemple : la page configurée pour <em>Materia Symphony</em> (concerts jeux vidéo, mai 2026).</div>
 
-    <h3 class="sub">À remplacer à chaque nouvelle billetterie</h3>
+    <div class="callout info" style="border-left-color:#7c3aed">
+      <strong>Billetterie : le réflexe à avoir</strong>
+      Pour changer la billetterie affichée : <strong>Articles → Billetterie</strong>, on crée un nouvel article, on remplit les champs (affiche, titre, dates, lien HelloAsso, lieu pour la carte, <code>date_fin</code>). Dès publication, la page se met à jour automatiquement. <strong>On ne touche plus à Elementor.</strong> Détails complets : <span class="xref-wp" data-tab="admin" data-anchor="a-billetterie">Articles → catégorie Billetterie</span>.
+    </div>
+
+    <h3 class="sub">Comment la page est construite</h3>
+    <p>La page Billetterie contient deux Conteneurs principaux dans Elementor, qui s'affichent <strong>l'un ou l'autre</strong> selon qu'une billetterie est en cours ou pas :</p>
     <div class="card">
       <dl class="kv">
-        <dt>Titre + sous-titre + texte de présentation</dt><dd>Contexte du projet, partenaires, programme musical. Voir <span class="xref-elementor" data-tab="design" data-anchor="d-texte">Modifier un texte</span>.</dd>
-        <dt>Affiche / visuel</dt><dd>Grande image avec dates, horaires, lieu, sponsors. Voir <span class="xref-elementor" data-tab="design" data-anchor="d-image">Modifier une image</span>.</dd>
-        <dt>Google Map</dt><dd><strong>Attention</strong> : ici la Map n'est <strong>pas</strong> le widget natif Elementor — c'est un <strong>widget <span class="xref-elementor" data-tab="design" data-anchor="d-widget-html">HTML</span></strong> avec un <code>iframe</code> Google Maps embed. Pour changer le lieu : sur <a href="https://maps.google.com" target="_blank" rel="noopener">maps.google.com</a>, chercher l'adresse → <em>Partager → Intégrer une carte</em> → copier le code, puis remplacer l'iframe dans le widget HTML d'Elementor.</dd>
-        <dt>Articles liés</dt><dd>Souvent on publie en parallèle une <em>Actualité "Billetterie ouverte"</em> qui pointe ici. Voir <span class="xref-wp" data-tab="admin" data-anchor="a-articles">Articles</span>.</dd>
+        <dt>Conteneur "billetterie active"</dt><dd>Une <strong>Grille de boucle</strong> filtrée par le snippet <code>billetterie_active</code> (articles catégorie Billetterie avec <code>date_fin ≥ aujourd'hui</code>). Au plus un article s'y trouve à la fois — le template de boucle <em>Billetterie</em> rend l'affiche, le titre, la description et les boutons HelloAsso. Voir <span class="xref-elementor" data-tab="design" data-anchor="d-template-billetterie">Le template de boucle Billetterie</span>.</dd>
+        <dt>Conteneur "hors saison" (placeholder)</dt><dd>Texte « La billetterie n'est pas encore ouverte » + visuel d'attente. Affiché automatiquement quand la Grille de boucle ne trouve aucun article actif, grâce au shortcode sentinelle <code>[no_active_billetterie]</code> combiné aux classes CSS <code>cug-cond</code> / <code>cug-cond-host</code> (mécanique <span class="xref-elementor" data-tab="design" data-anchor="d-cug-cond">affichage conditionnel</span>).</dd>
+        <dt>Carte du lieu</dt><dd>Dans le template de boucle <em>Billetterie</em>, un widget Shortcode appelle <code>[event_map_embed]</code> qui lit le champ personnalisé <code>event_map</code> de l'article (nom du lieu OU URL Google Maps complète) et génère l'iframe. Plus besoin de coller du HTML à la main. Voir <span class="xref-wp" data-tab="admin" data-anchor="a-shortcodes-catalogue">Catalogue des shortcodes maison</span>.</dd>
+        <dt>Formulaire newsletter</dt><dd>Inchangé — voir plus bas.</dd>
       </dl>
     </div>
 
-    <div class="callout info">
-      <strong>Pourquoi pas un système de billetterie en ligne ?</strong>
-      Actuellement, la page sert de vitrine — l'achat de billets se fait sur place ou via les partenaires (CVEC, etc.). Si un jour on intègre une vraie billetterie (Helloasso, Weezevent, etc.), ça passera par un widget HTML ou bouton vers le prestataire externe.
+    <h3 class="sub">Changer la billetterie en cours</h3>
+    <div class="card">
+      <h4>Étape 1 : créer l'article Billetterie</h4>
+      <p>Procédure complète détaillée dans <span class="xref-wp" data-tab="admin" data-anchor="a-billetterie">Articles → catégorie Billetterie</span>. En résumé :</p>
+      <ol>
+        <li><em>Articles → Ajouter</em> → catégorie <strong>Billetterie</strong>.</li>
+        <li>Titre = nom du concert / saison.</li>
+        <li>Image à la une = l'affiche (c'est elle qui apparaît sur la page).</li>
+        <li>Contenu = description du concert (Gutenberg : paragraphes, boutons HelloAsso, etc.).</li>
+        <li>Champs personnalisés à droite :
+          <ul>
+            <li><code>date_fin</code> : <strong>YYYY-MM-DD</strong> — dernière date à laquelle l'article doit rester actif (en général le lendemain du dernier concert). C'est ce champ qui décide si la billetterie est encore affichée.</li>
+            <li><code>event_map</code> : nom du lieu (ex. <em>Espace Bergès Villard-Bonnot</em>) OU URL Google Maps complète si on veut un cadrage particulier.</li>
+          </ul>
+        </li>
+        <li>Publier.</li>
+      </ol>
     </div>
-
-    <h3 class="sub">Hors saison : le bloc d'attente déjà préparé dans la page</h3>
-    <p>La page contient déjà un Conteneur <em>"La billetterie n'est pas encore ouverte"</em> qui sert pour les périodes hors-saison (entre deux billetteries). Il est <strong>actuellement gardé en réserve</strong> dans la page mais invisible côté public — via une astuce d'Elementor : on le rend invisible sur <strong>tous les appareils</strong> à la fois (desktop + tablette + mobile) en cochant les 3 cases <em>Masquer sur…</em> du panneau <em>Avancé → Responsive</em>. Le bloc reste dans la page Elementor, prêt à être réactivé.</p>
-
-    <img src="screenshots/elementor_responsive_hide.png" alt="Conteneur hors-saison de Billetterie avec Avancé → Responsive coché">
-    <div class="caption">Le Conteneur d'attente sélectionné dans le canvas → onglet <em>Avancé → Responsive</em> du panneau de gauche. Le badge rose à droite indique que des cases <em>Masquer sur…</em> sont cochées. Détourné de son usage normal (cacher un élément sur certaines tailles seulement), ici les 3 cases sont cochées pour masquer le bloc partout en attendant la prochaine saison creuse.</div>
 
     <div class="card">
-      <h4>Basculer en mode hors-saison</h4>
-      <ol>
-        <li>Sélectionner dans le canvas le Conteneur qui contient l'<strong>affiche et les dates du concert passé</strong>.</li>
-        <li>Panneau de gauche → onglet <em>Avancé → Responsive</em> → <strong>cocher</strong> les 3 cases <em>Masquer sur ordinateur / tablette / Portrait mobile</em>.</li>
-        <li>Sélectionner dans la Structure le Conteneur <em>"La billetterie n'est pas encore ouverte"</em>.</li>
-        <li>Onglet <em>Avancé → Responsive</em> → <strong>décocher</strong> les 3 mêmes cases pour le faire réapparaître.</li>
-        <li>Cliquer <em>Publier / Mettre à jour</em>. Côté public, la page affiche maintenant le message d'attente à la place du concert.</li>
-      </ol>
-      <p><strong>Pour revenir en saison</strong> : on fait l'opération inverse — cocher le bloc d'attente, décocher le bloc concert (après avoir évidemment remplacé l'affiche / les dates par le nouveau concert).</p>
+      <h4>Étape 2 : retirer l'ancienne billetterie</h4>
+      <p>L'ancien article reste publié — il bascule simplement hors de la Grille de boucle dès que sa <code>date_fin</code> est passée. <strong>Rien à faire</strong> : le placeholder « pas encore ouverte » apparaît tout seul s'il n'y a aucune billetterie active.</p>
+      <p>Si on veut forcer une bascule plus tôt (ex. mettre l'ancien hors-ligne sans attendre) : éditer l'ancien article et avancer son <code>date_fin</code> à hier.</p>
     </div>
 
     <div class="callout info">
-      <strong>Pourquoi cette astuce plutôt que de supprimer le bloc ?</strong>
-      Garder le bloc d'attente <em>en réserve</em> dans la page évite d'avoir à le recréer à chaque période hors-saison. On a déjà la mise en page, les styles, le ton — on bascule juste la visibilité. Cf. mécanique générale du masquage par appareil : <span class="xref-elementor" data-tab="design" data-anchor="d-responsive-hide">Masquer un élément sur certains appareils</span>.
+      <strong>Avantages par rapport à l'ancienne méthode (avant juin 2026)</strong>
+      Plus besoin d'ouvrir Elementor pour remplacer une image, un titre, recopier un code Google Maps. Plus besoin de cocher/décocher des cases <em>Masquer sur…</em> entre les saisons. La page reflète à tout moment ce qui est dans l'article correspondant — un seul endroit, une seule vérité.
     </div>
+
+    <details class="advanced">
+      <summary><span class="pill">Avancé</span>Si plusieurs articles Billetterie sont actifs en même temps</summary>
+      <p>La Grille de boucle est paramétrée pour <strong>n'afficher qu'un seul article à la fois</strong> (le plus récent par date de publication). Si on veut chevaucher deux billetteries (cas rare), on peut augmenter la limite dans la Grille, mais en pratique on garde 1.</p>
+      <p>Si on veut afficher en parallèle un <em>aperçu de la prochaine billetterie</em> : créer l'article à l'avance avec une <code>date_fin</code> future, mais avec une <strong>date de publication différée</strong> (programmer la publication via Gutenberg → <em>Publier le</em>). Il bascule en ligne le jour J automatiquement.</p>
+    </details>
 
     <h3 class="sub">Le formulaire "S'inscrire" en bas de page</h3>
     <p>Sous l'affiche, un petit formulaire <em>S'inscrire</em> (1 champ email + bouton) — c'est un widget <strong><span class="xref-elementor" data-tab="design" data-anchor="d-widget-form">Form Elementor Pro</span></strong> nommé <em>Inscription Newsletter</em>. Sert à constituer la liste des contacts qui veulent être tenus au courant des prochaines billetteries.</p>
@@ -1336,17 +1356,17 @@ function importEmailsToSheet() {
     <div class="caption">L'entrée de l'espace : champ mot de passe avec une photo du livret de partitions pour rappeler où le trouver. Le mot de passe est imprimé dans le <em>livret de partitions</em> distribué à chaque choriste en début de saison. Le style et le texte de cette page se modifient via <span class="xref-wp" data-tab="admin" data-anchor="a-personnaliser-ppwp">Personnaliser → PPWP Single Password Form</span>.</div>
 
     <h3 class="sub">Les 7 onglets</h3>
-    <p>Une seule page WordPress (<em>Pages → Espace Choristes</em>) avec un widget Elementor <em><span class="xref-elementor" data-tab="design" data-anchor="d-widget-tabs">Onglets imbriqués</span></em> (<code>n-tabs</code>) à 7 onglets indépendants. Chaque onglet est un <strong>Conteneur Elementor</strong> qu'on édite séparément — ouvrir l'onglet voulu dans le canvas et travailler à l'intérieur :</p>
+    <p>Une seule page WordPress (<em>Pages → Espace Choristes</em>) avec un widget Elementor <em><span class="xref-elementor" data-tab="design" data-anchor="d-widget-tabs">Onglets imbriqués</span></em> (<code>n-tabs</code>) à 7 onglets indépendants. Chaque onglet est un <strong>Conteneur Elementor</strong> qu'on édite séparément. <strong>Trois onglets sont désormais <em>content-driven</em></strong> (alimentés par des articles, plus besoin de toucher à Elementor) :</p>
 
     <div class="card">
       <dl class="kv">
         <dt>Premiers pas</dt><dd>Onboarding nouveau choriste. Contenu statique Elementor.</dd>
-        <dt>Le programme</dt><dd>Programme du semestre : boutons MuseScore (Drive), YouTube par pièce, livrets PDF (Drive). <em>Mis à jour chaque semestre.</em></dd>
-        <dt>Les news du CA</dt><dd>Trombinoscope + <em>Le fil info</em> (Grille de boucle des articles catégorie <span class="xref-wp" data-tab="admin" data-anchor="a-blog">Blog</span>).</dd>
+        <dt>Le programme <span class="pill" style="background:#7c3aed;color:white">content-driven</span></dt><dd>Affiche le <strong>Programme courant</strong> (article unique catégorie Programme, le plus récent). Boutons MuseScore, lecteur YouTube, livret PDF, MP3s — tout vient des champs personnalisés de l'article. <em>Plus besoin d'ouvrir Elementor à chaque semestre.</em></dd>
+        <dt>Les news du CA <span class="pill" style="background:#7c3aed;color:white">content-driven</span></dt><dd>Trombinoscope alimenté par les articles catégorie <strong>CA</strong> (rôle + nom + photo) + <em>Le fil info</em> (Grille de boucle des articles catégorie <span class="xref-wp" data-tab="admin" data-anchor="a-blog">Blog</span>).</dd>
         <dt>Photos</dt><dd>Galerie par année via plugin <strong>Google Drive Gallery</strong>.</dd>
         <dt>Vidéos</dt><dd>Embeds YouTube de captations + outils vidéo de travail.</dd>
         <dt>L'association</dt><dd>Informations légales, statuts, gouvernance.</dd>
-        <dt>Anciens programmes</dt><dd>Archives des saisons précédentes.</dd>
+        <dt>Anciens programmes <span class="pill" style="background:#7c3aed;color:white">content-driven</span></dt><dd>Grille de boucle des articles catégorie Programme <em>autres que le courant</em>. Chaque ancien programme reste cliquable et reproduit le même rendu (boutons, livret, MP3s).</dd>
       </dl>
     </div>
 
@@ -1387,9 +1407,32 @@ function importEmailsToSheet() {
       Le formulaire de mot de passe est dans la sidebar de l'éditeur WordPress (Gutenberg). Si on ouvre la page avec Elementor à la place, l'option n'apparaît nulle part — c'est ce qui fait souvent perdre 10 minutes.
     </div>
 
-    <h3 class="sub">Mettre à jour les fichiers de travail (partitions, livrets)</h3>
-    <p>Les fichiers de travail (MuseScore, livrets PDF) <strong>ne sont pas hébergés sur WordPress</strong> — ce sont des liens directs vers des fichiers/dossiers Google Drive du compte <code>orga@cug38.fr</code>, dans le dossier <em>Fichiers site web → Programme</em>.</p>
-    <p>Structure complète du Drive (sous-dossiers, sheet Newsletter), détail du dossier <em>Programme</em>, procédure de mise à jour d'un fichier et règle de partage : voir <span class="xref" data-tab="general" data-anchor="g-drive">Google Drive</span> dans <em>Le site en général</em>.</p>
+    <h3 class="sub">Changer le programme du semestre (onglet "Le programme")</h3>
+    <p>Depuis juin 2026, l'onglet <em>Le programme</em> ne se modifie plus dans Elementor — il reflète automatiquement le <strong>dernier article de catégorie Programme</strong> publié. Pour basculer sur le programme du semestre suivant, on crée <strong>un nouvel article Programme</strong>. C'est tout.</p>
+
+    <div class="card">
+      <h4>Procédure express</h4>
+      <ol>
+        <li>Préparer les fichiers sur Drive (<code>orga@cug38.fr</code>) → <em>Fichiers site web → Programme → [nom du programme]</em> : déposer MuseScore (Drive natif), livret PDF, MP3s. Voir <span class="xref" data-tab="general" data-anchor="g-drive">Google Drive</span> pour la structure.</li>
+        <li>WordPress : <em>Articles → Ajouter</em> → catégorie <strong>Programme</strong>.</li>
+        <li>Titre = nom du programme. Image à la une = visuel du programme.</li>
+        <li>Champs personnalisés (sidebar de droite) :
+          <ul>
+            <li><code>programme_musescore_url</code> : lien Drive du dossier MuseScore.</li>
+            <li><code>programme_youtube_playlist_id</code> : ID YouTube de la playlist d'apprentissage.</li>
+            <li><code>programme_livret_pdf_url</code> : lien direct du PDF livret.</li>
+            <li><code>programme_mp3s_folder_url</code> : lien Drive du dossier MP3s.</li>
+          </ul>
+        </li>
+        <li>Publier. Les anciens articles Programme basculent automatiquement dans l'onglet <em>Anciens programmes</em>.</li>
+      </ol>
+      <p>Procédure complète + capture de chaque champ : voir <span class="xref-wp" data-tab="admin" data-anchor="a-programme">Articles → catégorie Programme</span>.</p>
+    </div>
+
+    <div class="callout info" style="border-left-color:#7c3aed">
+      <strong>Avantage : tout en un seul endroit</strong>
+      Avant, il fallait à chaque semestre ouvrir Elementor, retrouver chaque bouton, changer 4 liens, modifier le code YouTube embed, sauvegarder, publier. Maintenant : un seul article, 4 champs, publié. Et l'historique des programmes précédents est conservé automatiquement (onglet <em>Anciens programmes</em>) — plus besoin de copier-coller une archive.
+    </div>
 
     <h3 class="sub">Mettre à jour la galerie Photos</h3>
     <p>La galerie photo de l'onglet <em>Photos</em> est gérée par le plugin <strong>Google Drive Gallery</strong> (cf. la documentation détaillée du plugin : <span class="xref-wp" data-tab="admin" data-anchor="a-extensions-drive-gallery">Le plugin Google Drive Gallery</span> dans le back-office).</p>
@@ -1426,8 +1469,19 @@ function importEmailsToSheet() {
       Le plugin garde un petit cache pour économiser des appels à Drive. Forcer le rafraîchissement : vider le cache du site (bouton <em>"Clear Posts Cache"</em> dans le bandeau noir d'admin tout en haut quand on est connecté), ou attendre quelques minutes. Si ça persiste, vérifier que le nouveau dossier est bien partagé (clic-droit → <em>Partager</em> → <em>"Toute personne disposant du lien : Lecteur"</em>).
     </div>
 
-    <h3 class="sub">Ajouter une news du CA</h3>
-    <p>Le fil "Les news du CA" est alimenté automatiquement par les articles de catégorie <strong>Blog</strong>. Pour publier une nouvelle news : créer un article de catégorie Blog dans le back-office. Voir <span class="xref-wp" data-tab="admin" data-anchor="a-blog">Articles → catégorie Blog</span>.</p>
+    <h3 class="sub">Onglet "Les news du CA" : trombinoscope + fil info</h3>
+    <p>L'onglet contient deux blocs, <strong>tous les deux content-driven</strong> :</p>
+    <div class="card">
+      <dl class="kv">
+        <dt>Trombinoscope du CA (en haut)</dt><dd>Alimenté par les articles de catégorie <strong>CA</strong> (rôle + nom + photo, ordre via <em>Attributs de la page → Ordre</em>). Pour modifier la composition du CA : voir <span class="xref-wp" data-tab="admin" data-anchor="a-ca">Articles → catégorie CA</span>. Plus aucune modification dans Elementor.</dd>
+        <dt>Le fil info (en bas)</dt><dd>Grille de boucle des articles de catégorie <strong>Blog</strong>. Pour publier une nouvelle news : créer un article catégorie Blog. Voir <span class="xref-wp" data-tab="admin" data-anchor="a-blog">Articles → catégorie Blog</span>.</dd>
+      </dl>
+    </div>
+
+    <div class="callout info" style="border-left-color:#7c3aed">
+      <strong>Onglet "Anciens programmes" : alimenté automatiquement</strong>
+      L'onglet liste, via une Grille de boucle filtrée, tous les articles catégorie Programme <em>sauf le plus récent</em> (le programme courant). Chaque article reste cliquable et reproduit le rendu complet (boutons MuseScore, livret, MP3s). Aucune maintenance à prévoir : dès qu'on publie un nouveau Programme, l'ancien bascule automatiquement dans cet onglet.
+    </div>
   </div>
 
 </section>
