@@ -505,7 +505,7 @@
   }
   .xref:hover { background: var(--accent); color: white; }
   .xref::before { content: "→"; }
-  /* WordPress back-office — blue */
+  /* WordPress admin — blue */
   .xref-wp {
     color: #1e3a8a;
     background: #dbeafe;
@@ -646,7 +646,7 @@
   <div class="tabs-inner">
     <a href="#rapides" class="tab-link active" data-tab="rapides">Les essentiels sur un an</a>
     <a href="#infra" class="tab-link" data-tab="infra">L'infrastructure</a>
-    <a href="#admin" class="tab-link" data-tab="admin">Le back-office (WordPress)</a>
+    <a href="#admin" class="tab-link" data-tab="admin">Le contenu (WordPress)</a>
     <a href="#design" class="tab-link" data-tab="design">Le design (Elementor)</a>
   </div>
 </nav>
@@ -666,7 +666,7 @@
     <button class="sub-link" data-sub="r-programme">Nouveau programme</button>
     <button class="sub-link" data-sub="r-billetterie">Ouverture de la billetterie</button>
     <button class="sub-link" data-sub="r-archivage">Archivage du concert</button>
-    <button class="sub-link" data-sub="r-captation">Captation et photos</button>
+    <button class="sub-link" data-sub="r-captation">Captations et photos</button>
     <button class="sub-link" data-sub="r-autre">Autres articles</button>
     <button class="sub-link" data-sub="r-blog">Blog du CA</button>
   </nav>
@@ -677,7 +677,7 @@
     <p class="section-intro">Cet onglet rassemble <strong>les actions courantes du cycle d'une saison</strong>. Chaque sous-onglet est une tâche concrète, avec <em>quand</em> l'effectuer, <em>ce qu'il faut sous la main</em>, et la marche à suivre étape par étape.</p>
 
     <div class="card">
-      <h4>Avant tout : se connecter au back-office</h4>
+      <h4>Avant tout : se connecter à WordPress</h4>
       <p>Quasiment chaque tâche de cet onglet commence par "se connecter à WordPress". Procédure rapide, avec un détour obligatoire par un bug récurrent :</p>
       <ol style="margin-top:8px">
         <li>Récupérer les identifiants dans le <strong>coffre LastPass</strong> (entrée <em>"Elementor — site CUG"</em>).</li>
@@ -687,15 +687,15 @@
         <li>Erreur <em>"Something went wrong"</em> → c'est normal, fermer l'onglet.</li>
         <li>Re-cliquer <em>Log in with Elementor</em> → tableau de bord.</li>
       </ol>
-      <p style="margin-top:10px">Procédure détaillée avec screenshots : <span class="xref-wp" data-tab="admin" data-anchor="a-login">Le back-office → Connexion &amp; admin</span>.</p>
+      <p style="margin-top:10px">Procédure détaillée avec screenshots : <span class="xref-wp" data-tab="admin" data-anchor="a-login">Le contenu → Connexion &amp; admin</span>.</p>
     </div>
 
     <div class="card">
       <h4>Les 4 onglets du guide</h4>
       <dl class="kv">
-        <dt><strong>Les essentiels sur un an</strong> (ici)</dt><dd>Les actions courantes, dans l'ordre du cycle d'une saison : Bienvenue · Inscriptions · Mot de passe choristes · Nouveau CA · Nouveau programme · Ouverture de la billetterie · Archivage du concert · Captation et photos · Autres articles · Blog du CA.</dd>
+        <dt><strong>Les essentiels sur un an</strong> (ici)</dt><dd>Les actions courantes, dans l'ordre du cycle d'une saison : Bienvenue · Inscriptions · Mot de passe choristes · Nouveau CA · Nouveau programme · Ouverture de la billetterie · Archivage du concert · Captations et photos · Autres articles · Blog du CA.</dd>
         <dt><strong>L'infrastructure</strong></dt><dd>Comptes, hébergement, DNS, Drive, automatisations, Sheet Newsletter, playbook "Si ça casse". Utile pour comprendre comment c'est branché, ou pour migrer/réparer.</dd>
-        <dt><strong>Le back-office (WordPress)</strong></dt><dd>Référence du back-office : connexion détaillée, pages, articles, menus, Personnaliser, extensions.</dd>
+        <dt><strong>Le contenu (WordPress)</strong></dt><dd>Référence WordPress : connexion détaillée, pages, articles, menus, Personnaliser, extensions.</dd>
         <dt><strong>Le design (Elementor)</strong></dt><dd>Quand on doit toucher au design : éditeur Elementor, templates, header/footer, responsive, widgets atypiques.</dd>
       </dl>
     </div>
@@ -705,7 +705,7 @@
       <dl class="kv">
         <dt><span class="xref" style="cursor:default" data-tab="infra" data-anchor="g-domaine">Lien doré</span></dt><dd>Vers <em>L'infrastructure</em>.</dd>
         <dt><span class="xref-elementor" style="cursor:default" data-tab="design" data-anchor="d-overview">Lien violet</span></dt><dd>Vers <em>Le design (Elementor)</em>.</dd>
-        <dt><span class="xref-wp" style="cursor:default" data-tab="admin" data-anchor="a-login">Lien bleu</span></dt><dd>Vers <em>Le back-office (WordPress)</em>.</dd>
+        <dt><span class="xref-wp" style="cursor:default" data-tab="admin" data-anchor="a-login">Lien bleu</span></dt><dd>Vers <em>Le contenu (WordPress)</em>.</dd>
       </dl>
     </div>
 
@@ -728,7 +728,7 @@
     <div class="card">
       <h4>Pas-à-pas</h4>
       <ol>
-        <li>Se connecter au back-office.</li>
+        <li>Se connecter à WordPress.</li>
         <li>Menu de gauche : <strong>Articles → Tous les articles</strong>, filtrer par catégorie <em>Actualités</em>.</li>
         <li>Trouver l'article <em>"Les inscriptions sont ouvertes"</em> (vérifier le titre exact dans la liste).</li>
         <li>Cliquer <em>Modifier</em>.</li>
@@ -740,7 +740,7 @@
 
     <div class="callout info">
       <strong>Si l'article n'apparaît pas tout de suite côté public</strong>
-      Le site garde un cache des pages publiques. Aller sur la page concernée (home, /billetterie/, Espace choristes…), cliquer <strong><em>Clear Posts Cache</em></strong> dans le bandeau noir d'admin tout en haut, recharger. Détails : <span class="xref-wp" data-tab="admin" data-anchor="a-articles-cache">Le back-office → Les articles → Si un article ne s'affiche pas</span>.
+      Le site garde un cache des pages publiques. Aller sur la page concernée (home, /billetterie/, Espace choristes…), cliquer <strong><em>Clear Posts Cache</em></strong> dans le bandeau noir d'admin tout en haut, recharger. Détails : <span class="xref-wp" data-tab="admin" data-anchor="a-articles-cache">Le contenu → Les articles → Si un article ne s'affiche pas</span>.
     </div>
 
     <div class="callout info">
@@ -748,7 +748,7 @@
       Les 2 cards du haut de la home : <em>"Les inscriptions sont ouvertes"</em> doit apparaître dans l'une d'elles (selon les autres actualités plus récentes).
     </div>
 
-    <p style="margin-top:14px"><em>Voir aussi</em> : structure d'un article Actualités dans <span class="xref-wp" data-tab="admin" data-anchor="a-actualites">Le back-office → Les articles → Actualités</span>.</p>
+    <p style="margin-top:14px"><em>Voir aussi</em> : structure d'un article Actualités dans <span class="xref-wp" data-tab="admin" data-anchor="a-actualites">Le contenu → Les articles → Actualités</span>.</p>
 
     <details class="advanced">
       <summary><span class="pill">Avancé</span>Pourquoi le formulaire reste le même</summary>
@@ -769,7 +769,7 @@
     <div class="card">
       <h4>Pas-à-pas</h4>
       <ol>
-        <li>Se connecter au back-office.</li>
+        <li>Se connecter à WordPress.</li>
         <li>Menu de gauche : <strong>Pages → Toutes les pages</strong>.</li>
         <li>Sur la ligne <em>"Espace Choristes"</em>, cliquer directement sur le titre (<strong>PAS</strong> sur <em>Modifier avec Elementor</em>). L'éditeur Gutenberg s'ouvre.</li>
         <li>Sidebar de droite : descendre jusqu'à la section <strong>Password Protect WordPress</strong>.</li>
@@ -794,7 +794,7 @@
       <div class="caption">Côté choriste : l'écran d'accès à <code>cug38.fr/espace-choristes/</code>, avec ses instructions (<em>« Entrez le mot de passe fourni dans votre livret de partitions… »</em>) + un visuel du livret.</div>
     </div>
   
-    <p style="margin-top:14px; font-size:.92em; color:var(--muted)"><em>Voir aussi</em> : <span class="xref-wp" data-tab="admin" data-anchor="a-pages">Le back-office → Les pages</span> — Plus de détails sur l'éditeur de pages.</p>
+    <p style="margin-top:14px; font-size:.92em; color:var(--muted)"><em>Voir aussi</em> : <span class="xref-wp" data-tab="admin" data-anchor="a-pages">Le contenu → Les pages</span> — Plus de détails sur l'éditeur de pages.</p>
   </div>
 
 <!-- ===================== Nouveau CA ===================== -->
@@ -819,7 +819,7 @@
     <div class="card">
       <h4>Pas-à-pas</h4>
       <ol>
-        <li>Se connecter au back-office.</li>
+        <li>Se connecter à WordPress.</li>
         <li>Menu de gauche : <strong>Articles → Tous les articles</strong>. Filtrer par catégorie <em>CA</em>.</li>
         <li><strong>Pour chaque membre qui part</strong> : passer son article en brouillon (au survol de la ligne, lien <em>Modification rapide</em> → Statut <em>Brouillon</em> → <em>Mettre à jour</em>). On garde en brouillon plutôt que poubelle, au cas où.</li>
         <li><strong>Pour chaque nouveau membre</strong> : créer un nouvel article (ou dupliquer un existant comme modèle), puis remplir :
@@ -838,7 +838,7 @@
 
     <div class="callout info">
       <strong>Si l'article n'apparaît pas tout de suite côté public</strong>
-      Le site garde un cache des pages publiques. Aller sur la page concernée (home, /billetterie/, Espace choristes…), cliquer <strong><em>Clear Posts Cache</em></strong> dans le bandeau noir d'admin tout en haut, recharger. Détails : <span class="xref-wp" data-tab="admin" data-anchor="a-articles-cache">Le back-office → Les articles → Si un article ne s'affiche pas</span>.
+      Le site garde un cache des pages publiques. Aller sur la page concernée (home, /billetterie/, Espace choristes…), cliquer <strong><em>Clear Posts Cache</em></strong> dans le bandeau noir d'admin tout en haut, recharger. Détails : <span class="xref-wp" data-tab="admin" data-anchor="a-articles-cache">Le contenu → Les articles → Si un article ne s'affiche pas</span>.
     </div>
 
     <div class="callout info">
@@ -853,7 +853,7 @@
       <p>La section CA utilise un widget Elementor <em>Loop Grid</em> filtré sur la catégorie CA, trié par <code>menu_order</code> croissant. Le champ « Ordre » est exposé dans Gutenberg grâce au snippet <span class="xref-wp" data-tab="admin" data-anchor="a-snippets-catalog">CUG — Exposer le champ Ordre</span>. Quand on publie / dépublie un article CA, la grille se met à jour automatiquement sans toucher au template.</p>
     </details>
   
-    <p style="margin-top:14px; font-size:.92em; color:var(--muted)"><em>Voir aussi</em> : <span class="xref-wp" data-tab="admin" data-anchor="a-ca">Le back-office → Les articles → CA</span> — Structure d'un article CA (champs, ordre).</p>
+    <p style="margin-top:14px; font-size:.92em; color:var(--muted)"><em>Voir aussi</em> : <span class="xref-wp" data-tab="admin" data-anchor="a-ca">Le contenu → Les articles → CA</span> — Structure d'un article CA (champs, ordre).</p>
   </div>
 
   <!-- ===================== Nouveau programme ===================== -->
@@ -881,7 +881,7 @@
       <h4>Pas-à-pas</h4>
       <ol>
         <li>Préparer les fichiers sur Drive (<code>orga@cug38.fr</code>) → <em>Fichiers site web → Programme → [nom du semestre]</em>. Récupérer les 4 URLs.</li>
-        <li>Se connecter au back-office.</li>
+        <li>Se connecter à WordPress.</li>
         <li><strong>Articles → Ajouter un article</strong>.</li>
         <li>Remplir :
           <ul>
@@ -907,7 +907,7 @@
 
     <div class="callout info">
       <strong>Si l'article n'apparaît pas tout de suite côté public</strong>
-      Le site garde un cache des pages publiques. Aller sur la page concernée (home, /billetterie/, Espace choristes…), cliquer <strong><em>Clear Posts Cache</em></strong> dans le bandeau noir d'admin tout en haut, recharger. Détails : <span class="xref-wp" data-tab="admin" data-anchor="a-articles-cache">Le back-office → Les articles → Si un article ne s'affiche pas</span>.
+      Le site garde un cache des pages publiques. Aller sur la page concernée (home, /billetterie/, Espace choristes…), cliquer <strong><em>Clear Posts Cache</em></strong> dans le bandeau noir d'admin tout en haut, recharger. Détails : <span class="xref-wp" data-tab="admin" data-anchor="a-articles-cache">Le contenu → Les articles → Si un article ne s'affiche pas</span>.
     </div>
 
     <div class="callout info">
@@ -944,7 +944,7 @@
       <p>Une Grille de boucle Elementor sur le template <em>Programme</em> (post id 3073) lit les articles catégorie Programme et trie par <code>date DESC</code>. La première card = le programme courant ; les suivantes vont dans la grille « Anciens ». Les sous-cartes (MuseScore / YouTube / livret / MP3s) utilisent le pattern <code>cug-cond</code> / <code>cug-cond-host</code> avec les shortcodes <code>[programme_musescore]</code>, <code>[programme_livret_pdf]</code>, etc. — voir <span class="xref-wp" data-tab="admin" data-anchor="a-snippets-catalog">Catalogue des snippets</span>.</p>
     </details>
   
-    <p style="margin-top:14px; font-size:.92em; color:var(--muted)"><em>Voir aussi</em> : <span class="xref-wp" data-tab="admin" data-anchor="a-programme">Le back-office → Les articles → Programme</span> — Structure d'un article Programme (4 champs personnalisés, shortcodes).</p>
+    <p style="margin-top:14px; font-size:.92em; color:var(--muted)"><em>Voir aussi</em> : <span class="xref-wp" data-tab="admin" data-anchor="a-programme">Le contenu → Les articles → Programme</span> — Structure d'un article Programme (4 champs personnalisés, shortcodes).</p>
   </div>
 
   <!-- ===================== Ouverture de la billetterie ===================== -->
@@ -972,7 +972,7 @@
     <div class="card">
       <h4>Pas-à-pas</h4>
       <ol>
-        <li>Se connecter au back-office.</li>
+        <li>Se connecter à WordPress.</li>
         <li><strong>Articles → Ajouter un article</strong>.</li>
         <li>Remplir :
           <ul>
@@ -997,7 +997,7 @@
     <div class="card">
       <h4>Pas-à-pas</h4>
       <ol>
-        <li>Toujours dans le back-office : <strong>Articles → Ajouter un article</strong>.</li>
+        <li>Toujours dans le contenu : <strong>Articles → Ajouter un article</strong>.</li>
         <li>Remplir :
           <ul>
             <li><strong>Titre</strong> = court et accrocheur (ex. « Billetterie ouverte pour Materia Symphony »).</li>
@@ -1043,7 +1043,7 @@
       <p>La page Billetterie contient une Grille de boucle filtrée par le snippet <code>billetterie_active</code> (articles catégorie Billetterie avec <code>date_fin ≥ aujourd'hui</code>). Si aucun article n'est actif, un placeholder « pas encore ouverte » s'affiche à la place, grâce au shortcode sentinelle <code>[no_active_billetterie]</code> + le pattern <code>cug-cond</code> / <code>cug-cond-host</code>. La carte du lieu est rendue par le shortcode <code>[event_map_embed]</code> qui lit le champ <code>event_map</code>. Catalogue snippets : <span class="xref-wp" data-tab="admin" data-anchor="a-snippets-catalog">Catalogue des snippets</span>.</p>
     </details>
   
-    <p style="margin-top:14px; font-size:.92em; color:var(--muted)"><em>Voir aussi</em> : <span class="xref-wp" data-tab="admin" data-anchor="a-billetterie-cat">Le back-office → Les articles → Billetterie</span> — Structure d'un article Billetterie (date_fin, event_map, etc.).</p>
+    <p style="margin-top:14px; font-size:.92em; color:var(--muted)"><em>Voir aussi</em> : <span class="xref-wp" data-tab="admin" data-anchor="a-billetterie-cat">Le contenu → Les articles → Billetterie</span> — Structure d'un article Billetterie (date_fin, event_map, etc.).</p>
   </div>
 
   <!-- ===================== Archivage du concert ===================== -->
@@ -1071,7 +1071,7 @@
     <div class="card">
       <h4>Pas-à-pas</h4>
       <ol>
-        <li>Se connecter au back-office.</li>
+        <li>Se connecter à WordPress.</li>
         <li><strong>Articles → Ajouter un article</strong>.</li>
         <li>Remplir les méta-données dans l'éditeur Gutenberg :
           <ul>
@@ -1107,12 +1107,12 @@
       <div class="caption">Vue détaillée d'une fiche Projet ouverte depuis <a href='https://cug38.fr/nos-concerts/' target='_blank' rel='noopener'>/nos-concerts/</a> : titre, date, affiche, description, lien vidéo — tout vient de l'article Projets construit dans Elementor.</div>
     </div>
   
-    <p style="margin-top:14px; font-size:.92em; color:var(--muted)"><em>Voir aussi</em> : <span class="xref-wp" data-tab="admin" data-anchor="a-projets">Le back-office → Les articles → Projets</span> — Structure d'une fiche Projet + pièges Elementor.</p>
+    <p style="margin-top:14px; font-size:.92em; color:var(--muted)"><em>Voir aussi</em> : <span class="xref-wp" data-tab="admin" data-anchor="a-projets">Le contenu → Les articles → Projets</span> — Structure d'une fiche Projet + pièges Elementor.</p>
   </div>
 
-  <!-- ===================== Captation et photos ===================== -->
+  <!-- ===================== Captations et photos ===================== -->
   <div class="sub-panel" id="r-captation">
-    <h2 class="section">Captation et photos <span class="when-tag">quand la vidéo et les photos sont prêtes</span></h2>
+    <h2 class="section">Captations et photos <span class="when-tag">quand la vidéo et les photos sont prêtes</span></h2>
     <p class="section-intro">Quand la captation vidéo d'un concert est mise en ligne sur la chaîne YouTube du CUG, on crée un article <em>Youtube</em> qui apparaît sur la 4<sup>e</sup> card de la home. En parallèle, les photos du concert sont rangées dans le Drive pour alimenter l'Espace choristes.</p>
 
     <h3 class="sub">La captation vidéo</h3>
@@ -1134,7 +1134,7 @@
       <h4>Pas-à-pas</h4>
       <ol>
         <li>Sur YouTube (chaîne du CUG, compte <code>orga@cug38.fr</code>) : <strong>ajouter la vidéo à la playlist Captations</strong> → <a href="https://www.youtube.com/playlist?list=PL-jfIQEnBVEBZ6mTarFAxFzicYVoQ-Kpz" target="_blank" rel="noopener">la playlist est ici</a>. Clic sur les trois points (<em>···</em>) de la vidéo → <em>Enregistrer dans la playlist</em> → cocher <em>Captations</em>.</li>
-        <li>Se connecter au back-office WordPress.</li>
+        <li>Se connecter à WordPress WordPress.</li>
         <li><strong>Articles → Ajouter un article</strong>.</li>
         <li>Remplir :
           <ul>
@@ -1153,7 +1153,7 @@
 
     <div class="callout info">
       <strong>Si l'article n'apparaît pas tout de suite côté public</strong>
-      Le site garde un cache des pages publiques. Aller sur la page concernée (home, /billetterie/, Espace choristes…), cliquer <strong><em>Clear Posts Cache</em></strong> dans le bandeau noir d'admin tout en haut, recharger. Détails : <span class="xref-wp" data-tab="admin" data-anchor="a-articles-cache">Le back-office → Les articles → Si un article ne s'affiche pas</span>.
+      Le site garde un cache des pages publiques. Aller sur la page concernée (home, /billetterie/, Espace choristes…), cliquer <strong><em>Clear Posts Cache</em></strong> dans le bandeau noir d'admin tout en haut, recharger. Détails : <span class="xref-wp" data-tab="admin" data-anchor="a-articles-cache">Le contenu → Les articles → Si un article ne s'affiche pas</span>.
     </div>
 
     <div class="callout warn">
@@ -1186,7 +1186,7 @@
       <p>Le template de boucle <em>Youtube</em> (post id 2037) utilisé par la card de la home contient un widget Vidéo dont l'URL est une balise dynamique <em>Shortcode</em> appelant <code>[youtube_link]</code>. Ce shortcode (snippet <em>youtube_link</em>) lit le champ personnalisé <code>youtube-link</code> de l'article courant et renvoie l'URL. Détails : <span class="xref-elementor" data-tab="design" data-anchor="d-youtube">Le design → Le pattern shortcode/dynamic-tag</span>.</p>
     </details>
   
-    <p style="margin-top:14px; font-size:.92em; color:var(--muted)"><em>Voir aussi</em> : <span class="xref-wp" data-tab="admin" data-anchor="a-youtube">Le back-office → Les articles → Youtube</span> — Structure d'un article Youtube (champ youtube-link).</p>
+    <p style="margin-top:14px; font-size:.92em; color:var(--muted)"><em>Voir aussi</em> : <span class="xref-wp" data-tab="admin" data-anchor="a-youtube">Le contenu → Les articles → Youtube</span> — Structure d'un article Youtube (champ youtube-link).</p>
   </div>
 
   <!-- ===================== Autres articles ===================== -->
@@ -1204,7 +1204,7 @@
     <div class="card">
       <h4>Pas-à-pas</h4>
       <ol>
-        <li>Se connecter au back-office.</li>
+        <li>Se connecter à WordPress.</li>
         <li>Menu de gauche : <strong>Articles → Tous les articles</strong>, filtrer par catégorie <em>Actualités</em>.</li>
         <li>Trouver l'article à remettre devant (ex. <em>"Bonnes vacances"</em>, <em>"Joyeuses fêtes"</em>, <em>"Reprise des répétitions"</em>, etc.).</li>
         <li>Cliquer <em>Modifier</em>.</li>
@@ -1216,7 +1216,7 @@
 
     <div class="callout info">
       <strong>Si l'article n'apparaît pas tout de suite côté public</strong>
-      Le site garde un cache des pages publiques. Aller sur la page concernée (home, /billetterie/, Espace choristes…), cliquer <strong><em>Clear Posts Cache</em></strong> dans le bandeau noir d'admin tout en haut, recharger. Détails : <span class="xref-wp" data-tab="admin" data-anchor="a-articles-cache">Le back-office → Les articles → Si un article ne s'affiche pas</span>.
+      Le site garde un cache des pages publiques. Aller sur la page concernée (home, /billetterie/, Espace choristes…), cliquer <strong><em>Clear Posts Cache</em></strong> dans le bandeau noir d'admin tout en haut, recharger. Détails : <span class="xref-wp" data-tab="admin" data-anchor="a-articles-cache">Le contenu → Les articles → Si un article ne s'affiche pas</span>.
     </div>
 
     <h3 class="sub">Cas 2 — Créer une Actualité de zéro</h3>
@@ -1233,7 +1233,7 @@
     <div class="card">
       <h4>Pas-à-pas</h4>
       <ol>
-        <li>Se connecter au back-office.</li>
+        <li>Se connecter à WordPress.</li>
         <li><strong>Articles → Ajouter un article</strong>.</li>
         <li>Remplir :
           <ul>
@@ -1256,7 +1256,7 @@
       <div class="caption">La home, scrollée juste sous le bandeau Bienvenue, avec les <strong>2 cards Actualités du haut entourées en rouge</strong> (« Bonnes vacances ! » et « Materia Symphony »). C'est dans ces deux emplacements que les Actualités les plus récentes apparaissent.</div>
     </div>
   
-    <p style="margin-top:14px; font-size:.92em; color:var(--muted)"><em>Voir aussi</em> : <span class="xref-wp" data-tab="admin" data-anchor="a-actualites">Le back-office → Les articles → Actualités</span> — Structure d'un article Actualités.</p>
+    <p style="margin-top:14px; font-size:.92em; color:var(--muted)"><em>Voir aussi</em> : <span class="xref-wp" data-tab="admin" data-anchor="a-actualites">Le contenu → Les articles → Actualités</span> — Structure d'un article Actualités.</p>
   </div>
 
   <!-- ===================== Blog du CA ===================== -->
@@ -1272,7 +1272,7 @@
     <div class="card">
       <h4>Pas-à-pas</h4>
       <ol>
-        <li>Se connecter au back-office.</li>
+        <li>Se connecter à WordPress.</li>
         <li><strong>Articles → Ajouter un article</strong>.</li>
         <li>Remplir :
           <ul>
@@ -1289,7 +1289,7 @@
 
     <div class="callout info">
       <strong>Si l'article n'apparaît pas tout de suite côté public</strong>
-      Le site garde un cache des pages publiques. Aller sur la page concernée (home, /billetterie/, Espace choristes…), cliquer <strong><em>Clear Posts Cache</em></strong> dans le bandeau noir d'admin tout en haut, recharger. Détails : <span class="xref-wp" data-tab="admin" data-anchor="a-articles-cache">Le back-office → Les articles → Si un article ne s'affiche pas</span>.
+      Le site garde un cache des pages publiques. Aller sur la page concernée (home, /billetterie/, Espace choristes…), cliquer <strong><em>Clear Posts Cache</em></strong> dans le bandeau noir d'admin tout en haut, recharger. Détails : <span class="xref-wp" data-tab="admin" data-anchor="a-articles-cache">Le contenu → Les articles → Si un article ne s'affiche pas</span>.
     </div>
 
     <div class="callout info">
@@ -1299,13 +1299,13 @@
       <div class="caption">L'onglet <em>Les news du CA</em> de l'Espace choristes, scrollé sur la section <em>Le fil info</em> : les articles catégorie Blog s'affichent en grille, templates alternés.</div>
     </div>
   
-    <p style="margin-top:14px; font-size:.92em; color:var(--muted)"><em>Voir aussi</em> : <span class="xref-wp" data-tab="admin" data-anchor="a-blog">Le back-office → Les articles → Blog</span> — Structure d'un article Blog.</p>
+    <p style="margin-top:14px; font-size:.92em; color:var(--muted)"><em>Voir aussi</em> : <span class="xref-wp" data-tab="admin" data-anchor="a-blog">Le contenu → Les articles → Blog</span> — Structure d'un article Blog.</p>
   </div>
 
 </section>
 
 <!-- ============================================================
-     TAB 2 : LE BACK-OFFICE (WORDPRESS)
+     TAB 2 : LE CONTENU (WORDPRESS)
      ============================================================ -->
 
 <section class="panel" id="panel-admin">
@@ -1320,7 +1320,7 @@
   </nav>
 
   <div class="sub-panel active" id="a-login">
-    <h2 class="section">Se connecter au back-office</h2>
+    <h2 class="section">Se connecter à WordPress</h2>
     <p class="section-intro">L'accès au site passe par un compte <strong>Elementor</strong> (et non par les utilisateurs WordPress classiques). Les identifiants — email + mot de passe — sont stockés dans le <strong>coffre LastPass</strong> de l'association. La procédure complète prend ~1 minute, avec un détour obligatoire par un bug récurrent au milieu.</p>
 
     <div class="step">
@@ -1397,7 +1397,7 @@
       </div>
       <p>Cette fois, redirection directe vers le tableau de bord WordPress — pas besoin de retaper email / mot de passe / 2FA, la session Elementor est en place.</p>
       <img src="screenshots/login_dashboard_final.png" alt="Tableau de bord WordPress après connexion réussie">
-      <div class="caption">Le tableau de bord WordPress, point d'entrée du back-office.</div>
+      <div class="caption">Le tableau de bord WordPress, point d'entrée de WordPress.</div>
     </div>
 
     <div class="step">
@@ -1419,7 +1419,7 @@
     </div>
 
     <h3 class="sub" id="a-dashboard">Le tableau de bord</h3>
-    <p>Une fois connecté, on arrive sur le <strong>tableau de bord</strong> (<code>cug38.fr/wp-admin</code>) — point d'entrée du back-office. À gauche, le menu principal regroupe toutes les zones du site. En haut, la barre noire d'admin et le bouton <em>Bonjour, Chœur Universitaire de Grenoble</em> pour gérer le profil.</p>
+    <p>Une fois connecté, on arrive sur le <strong>tableau de bord</strong> (<code>cug38.fr/wp-admin</code>) — point d'entrée de WordPress. À gauche, le menu principal regroupe toutes les zones du site. En haut, la barre noire d'admin et le bouton <em>Bonjour, Chœur Universitaire de Grenoble</em> pour gérer le profil.</p>
 
     <img src="screenshots/05_dashboard.png" alt="Vue d'ensemble du tableau de bord WordPress">
 
@@ -1434,7 +1434,7 @@
         <li><strong>Google Drive gallery</strong> — Réglages du plugin galerie photos (voir <span class="xref-wp" data-tab="admin" data-anchor="a-extensions-drive-gallery">Le plugin Google Drive Gallery</span>).</li>
         <li><strong>Password Protect WordPress</strong> — Mot de passe de l'espace choriste.</li>
         <li><strong>Extensions</strong> — Plugins installés et mises à jour. <span class="xref-wp" data-tab="admin" data-anchor="a-extensions">Voir détail</span>.</li>
-        <li><strong>Comptes</strong> — Utilisateurs WordPress (rare — l'accès passe par le compte Elementor, voir <span class="xref-wp" data-tab="admin" data-anchor="a-login">Se connecter au back-office</span>).</li>
+        <li><strong>Comptes</strong> — Utilisateurs WordPress (rare — l'accès passe par le compte Elementor, voir <span class="xref-wp" data-tab="admin" data-anchor="a-login">Se connecter à WordPress</span>).</li>
       </ul>
     </div>
 
@@ -1502,7 +1502,7 @@
 
     <div class="callout info" style="border-left-color:#7c3aed">
       <strong>Pour publier quelque chose, le réflexe</strong>
-      Aller dans <em>Les essentiels sur un an</em> — chaque sous-onglet est un pas-à-pas concret (Inscriptions, Mot de passe choristes, Nouveau CA, Nouveau programme, Ouverture de la billetterie, Archivage du concert, Captation et photos, Autres articles, Blog du CA). Cette page-ci sert de référence : <em>qu'est-ce que c'est, où ça apparaît, et — en Avancé — comment c'est branché</em>.
+      Aller dans <em>Les essentiels sur un an</em> — chaque sous-onglet est un pas-à-pas concret (Inscriptions, Mot de passe choristes, Nouveau CA, Nouveau programme, Ouverture de la billetterie, Archivage du concert, Captations et photos, Autres articles, Blog du CA). Cette page-ci sert de référence : <em>qu'est-ce que c'est, où ça apparaît, et — en Avancé — comment c'est branché</em>.
     </div>
 
     <h3 class="sub">La liste des articles</h3>
@@ -1516,7 +1516,7 @@
       <dl class="kv">
         <dt>Actualités</dt><dd>Annonces ponctuelles. Les 2 dernières remplissent les <strong>2 cards du haut de la home</strong>. Pour publier : <span class="xref" data-tab="rapides" data-anchor="r-billetterie">Les essentiels sur un an → Les inscriptions ou Ouverture de la billetterie</span>.</dd>
         <dt>Projets</dt><dd>Un article = un concert / projet (passé ou à venir). Le dernier publié = 3<sup>e</sup> card de la home, tous = <strong>page Nos concerts</strong>. <strong>Particularité</strong> : contenu construit dans Elementor (pas Gutenberg). Pour ajouter un projet : <span class="xref" data-tab="rapides" data-anchor="r-archivage">Les essentiels sur un an → Archivage du concert</span> + section Avancée ci-dessous.</dd>
-        <dt>Youtube</dt><dd>Captation vidéo d'un concert. Le dernier publié = <strong>4<sup>e</sup> card de la home</strong>. Pour publier : <span class="xref" data-tab="rapides" data-anchor="r-captation">Les essentiels sur un an → Captation et photos</span>.</dd>
+        <dt>Youtube</dt><dd>Captation vidéo d'un concert. Le dernier publié = <strong>4<sup>e</sup> card de la home</strong>. Pour publier : <span class="xref" data-tab="rapides" data-anchor="r-captation">Les essentiels sur un an → Captations et photos</span>.</dd>
         <dt>Blog</dt><dd>Communications internes du CA aux choristes. <strong>Espace choristes uniquement</strong> (onglet <em>Les news du CA</em>). Pour publier : <span class="xref" data-tab="rapides" data-anchor="r-blog">Les essentiels sur un an → Blog du CA</span>.</dd>
         <dt>CA</dt><dd>Un article par membre du Conseil d'Administration. Affiché en grille sur <strong>Le chœur</strong> (section CA) et sur l'Espace choristes. Pour mettre à jour : <span class="xref" data-tab="rapides" data-anchor="r-ca">Les essentiels sur un an → Nouveau CA</span>.</dd>
         <dt>Programme</dt><dd>Un article par programme musical. Le plus récent = onglet <em>Le programme</em> de l'Espace choristes ; les autres = <em>Anciens programmes</em>. Pour changer de programme : <span class="xref" data-tab="rapides" data-anchor="r-programme">Les essentiels sur un an → Nouveau programme</span>.</dd>
@@ -1708,7 +1708,7 @@
     <p class="section-intro">Les menus de navigation du site (la barre du haut, et le menu déroulant sur mobile) sont gérés <strong>ici, dans WordPress</strong>, pas dans Elementor. Le <span class="xref-elementor" data-tab="design" data-anchor="d-header-footer">template header</span> Elementor affiche simplement les menus définis ici.</p>
 
     <h3 class="sub">Accès</h3>
-    <p>Dans le back-office, menu de gauche : <strong>Apparence → Menus</strong> (raccourci direct : <code>cug38.fr/wp-admin/nav-menus.php</code>).</p>
+    <p>Dans le contenu, menu de gauche : <strong>Apparence → Menus</strong> (raccourci direct : <code>cug38.fr/wp-admin/nav-menus.php</code>).</p>
 
     <h3 class="sub">Deux menus séparés sur le site</h3>
     <div class="card">
@@ -1762,7 +1762,7 @@
 
     <h3 class="sub">Comment y accéder</h3>
     <ul>
-      <li><strong>Depuis le back-office</strong> (où vous êtes ici) : menu de gauche → <em>Apparence → Personnaliser</em>.</li>
+      <li><strong>Depuis le contenu</strong> (où vous êtes ici) : menu de gauche → <em>Apparence → Personnaliser</em>.</li>
       <li><strong>Depuis le site public</strong> (raccourci, quand on est connecté) : bouton <em>Personnaliser</em> dans le bandeau noir d'admin en haut.</li>
     </ul>
 
@@ -2034,7 +2034,7 @@
     </div>
 
     <div class="card">
-      <h4>Depuis le back-office</h4>
+      <h4>Depuis le contenu</h4>
       <ol>
         <li>Dans <span class="xref-wp" data-tab="admin" data-anchor="a-pages">Pages → Toutes les pages</span>, repérer la page voulue.</li>
         <li>Survol de la ligne → bouton <em>Modifier avec Elementor</em>.</li>
@@ -2043,7 +2043,7 @@
 
     <div class="callout warn">
       <strong>Page bloquée par une session ouverte</strong>
-      Si Elementor refuse d'ouvrir une page avec un message du type "en cours de modification par un autre utilisateur", c'est qu'une session précédente n'a pas été refermée proprement. Solution rapide : vider les cookies, ou rouvrir la page via le back-office et reprendre l'édition manuellement.
+      Si Elementor refuse d'ouvrir une page avec un message du type "en cours de modification par un autre utilisateur", c'est qu'une session précédente n'a pas été refermée proprement. Solution rapide : vider les cookies, ou rouvrir la page via le contenu et reprendre l'édition manuellement.
     </div>
 
     <h3 class="sub">L'interface de l'éditeur</h3>
@@ -2353,7 +2353,7 @@
     <div class="card">
       <dl class="kv">
         <dt><span class="xref-elementor" data-tab="design" data-anchor="d-header-footer">Header</span></dt><dd>Le menu desktop horizontal est masqué sur tablette/mobile · le menu compact turquoise est masqué sur desktop. Chaque taille voit la bonne version.</dd>
-        <dt><span class="xref" data-tab="rapides" data-anchor="r-billetterie">Billetterie · Hors saison</span></dt><dd>Cas particulier géré automatiquement depuis la refonte content-driven : voir <em>Les essentiels sur un an → Ouverture de la billetterie</em> et <em>Le back-office → Les articles → Billetterie</em>. Plus de bascule responsive-hide manuelle.</dd>
+        <dt><span class="xref" data-tab="rapides" data-anchor="r-billetterie">Billetterie · Hors saison</span></dt><dd>Cas particulier géré automatiquement depuis la refonte content-driven : voir <em>Les essentiels sur un an → Ouverture de la billetterie</em> et <em>Le contenu → Les articles → Billetterie</em>. Plus de bascule responsive-hide manuelle.</dd>
       </dl>
     </div>
   </div>
@@ -2387,7 +2387,7 @@
 
     <div class="card">
       <h4>Modifier les entrées d'un menu</h4>
-      <p>Les menus sont gérés <strong>dans le back-office WordPress</strong>, pas dans Elementor. Procédure complète + captures : <span class="xref-wp" data-tab="admin" data-anchor="a-menus">Apparence → Menus</span>.</p>
+      <p>Les menus sont gérés <strong>dans le contenu WordPress</strong>, pas dans Elementor. Procédure complète + captures : <span class="xref-wp" data-tab="admin" data-anchor="a-menus">Apparence → Menus</span>.</p>
       <p>Une fois la modif faite côté WordPress et enregistrée, elle apparaît immédiatement sur le site — pas besoin de toucher au header dans Elementor.</p>
     </div>
 
@@ -2486,7 +2486,7 @@
       <div class="card">
         <h4>Le pattern à trois pièces</h4>
         <ol>
-          <li><strong>Un champ personnalisé</strong> sur l'article (post_meta WordPress) — c'est la valeur qu'on saisit en back-office.</li>
+          <li><strong>Un champ personnalisé</strong> sur l'article (post_meta WordPress) — c'est la valeur qu'on saisit dans WordPress.</li>
           <li><strong>Un shortcode</strong> (snippet PHP dans <span class="xref-wp" data-tab="admin" data-anchor="a-extensions-code-snippets">Code Snippets</span>) qui lit ce champ et renvoie sa valeur (ou un rendu HTML prêt à l'emploi).</li>
           <li><strong>Une balise dynamique <em>Shortcode</em></strong> sur un champ d'un widget Elementor (URL, src, classes CSS, contenu HTML…). Au rendu, Elementor exécute le shortcode dans le contexte de l'article courant et insère le résultat.</li>
         </ol>
@@ -2600,7 +2600,7 @@
       <dl class="kv">
         <dt>Billetterie</dt><dd>Form 1 champ email + bouton "S'inscrire" (vraisemblablement pour recevoir l'info des prochaines billetteries / newsletter)</dd>
       </dl>
-      <p><strong>Pour voir / modifier les actions</strong> : sélectionner le widget Form → onglet <em>Contenu → Actions After Submit</em> (email, MailChimp, redirect, etc.). Pour consulter les soumissions reçues : <em>Elementor → Submissions</em> dans le back-office WP, ou directement sur my.elementor.com.</p>
+      <p><strong>Pour voir / modifier les actions</strong> : sélectionner le widget Form → onglet <em>Contenu → Actions After Submit</em> (email, MailChimp, redirect, etc.). Pour consulter les soumissions reçues : <em>Elementor → Submissions</em> dans le contenu WP, ou directement sur my.elementor.com.</p>
     </div>
 
     <div class="card" id="d-widget-tabs">
@@ -2901,13 +2901,13 @@
 
     <div class="callout info">
       <strong>Comment se connecter</strong>
-      L'accès au back-office passe par le bouton <em>Log in with Elementor</em> sur la page <code>cug38.fr/wp-admin</code>, puis les identifiants Elementor (email + mot de passe) récupérés dans le coffre LastPass de l'association, et éventuellement un code 2FA à 6 chiffres reçu par mail. Procédure pas-à-pas : <span class="xref-wp" data-tab="admin" data-anchor="a-login">Connexion &amp; admin → Se connecter au back-office</span>.
+      L'accès à WordPress passe par le bouton <em>Log in with Elementor</em> sur la page <code>cug38.fr/wp-admin</code>, puis les identifiants Elementor (email + mot de passe) récupérés dans le coffre LastPass de l'association, et éventuellement un code 2FA à 6 chiffres reçu par mail. Procédure pas-à-pas : <span class="xref-wp" data-tab="admin" data-anchor="a-login">Connexion &amp; admin → Se connecter à WordPress</span>.
     </div>
 
     <div class="card">
       <h4>WordPress — le moteur</h4>
       <p>WordPress gère les pages, les articles, les utilisateurs, la médiathèque, les extensions. Toute action qui n'est <strong>pas du design pur</strong> se passe dans WordPress : créer un article, changer un mot de passe, ajouter une image dans la médiathèque, gérer les extensions.</p>
-      <p>Pour un tour complet du back-office, voir <span class="xref-wp" data-tab="admin" data-anchor="a-dashboard">Le back-office WordPress</span>.</p>
+      <p>Pour un tour complet de WordPress, voir <span class="xref-wp" data-tab="admin" data-anchor="a-dashboard">Le contenu WordPress</span>.</p>
     </div>
 
     <div class="card">
@@ -2918,7 +2918,7 @@
 
     <div class="callout info">
       <strong>Règle simple</strong>
-      Pour modifier une <strong>page</strong> (mise en page, sections, images) → Elementor. Pour créer/modifier un <strong>article</strong> (actualité, concert, etc.) → éditeur WordPress standard. Voir <span class="xref-wp" data-tab="admin" data-anchor="a-pages">les pages dans le back-office</span> et <span class="xref-wp" data-tab="admin" data-anchor="a-articles">les articles</span>.
+      Pour modifier une <strong>page</strong> (mise en page, sections, images) → Elementor. Pour créer/modifier un <strong>article</strong> (actualité, concert, etc.) → éditeur WordPress standard. Voir <span class="xref-wp" data-tab="admin" data-anchor="a-pages">les pages dans le contenu</span> et <span class="xref-wp" data-tab="admin" data-anchor="a-articles">les articles</span>.
     </div>
   </div>
 
@@ -2986,7 +2986,7 @@
       L'extension <em>"Integrate Google Drive"</em> est <strong>installée mais pas utilisée</strong> sur le site (vérifié : aucun widget de ce plugin n'apparaît dans les pages). On pourrait la désactiver pour alléger, sans risque.
     </div>
 
-    <p style="margin-top:18px">Pour les réglages des extensions, voir <span class="xref-wp" data-tab="admin" data-anchor="a-extensions">Les extensions</span> dans le back-office.</p>
+    <p style="margin-top:18px">Pour les réglages des extensions, voir <span class="xref-wp" data-tab="admin" data-anchor="a-extensions">Les extensions</span> dans le contenu.</p>
   </div>
 
   <div class="sub-panel" id="g-newsletter">
@@ -3085,7 +3085,7 @@ function importEmailsToSheet() {
     <div class="card">
       <h4>🔐 Je n'arrive plus à me connecter</h4>
       <ul>
-        <li>Vérifier d'abord que tu suis bien la procédure : <span class="xref-wp" data-tab="admin" data-anchor="a-login">Se connecter au back-office</span> (Log in with Elementor + email/mdp LastPass, jamais Continue with Google).</li>
+        <li>Vérifier d'abord que tu suis bien la procédure : <span class="xref-wp" data-tab="admin" data-anchor="a-login">Se connecter à WordPress</span> (Log in with Elementor + email/mdp LastPass, jamais Continue with Google).</li>
         <li>Le bug "Something went wrong" est <strong>normal</strong> au 1er essai — fermer l'onglet, re-cliquer Log in with Elementor.</li>
         <li>Si le mot de passe ne marche plus : <em>Forgot your password?</em> sur la page Sign in Elementor, mail de reset sur <code>orga@cug38.fr</code>.</li>
         <li>Si le 2FA bloque : code à 6 chiffres reçu sur <code>orga@cug38.fr</code>, valable 10 min.</li>
@@ -3315,7 +3315,7 @@ function importEmailsToSheet() {
   const searchResults = document.getElementById('search-results');
   const tabLabels = {
     'rapides': 'Les essentiels sur un an',
-    'admin': 'Le back-office (WordPress)',
+    'admin': 'Le contenu (WordPress)',
     'design': 'Le design (Elementor)',
     'infra': "L'infrastructure"
   };
