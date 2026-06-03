@@ -601,7 +601,7 @@
     <div class="header-text">
       <h1>Guide du site CUG</h1>
       <div class="tagline">Tout ce qu'il faut savoir pour reprendre <code>cug38.fr</code> en main</div>
-      <div class="meta">Mis à jour : <strong>22 mai 2026</strong> &nbsp;·&nbsp; Version <strong>1.0</strong></div>
+      <div class="meta">Mis à jour : <strong>3 juin 2026</strong> &nbsp;·&nbsp; Version <strong>1.1</strong></div>
     </div>
     <div class="search-bar">
       <input type="text" id="search-input" placeholder="Rechercher…" autocomplete="off">
@@ -2224,13 +2224,21 @@ function importEmailsToSheet() {
     <div class="caption">La liste affiche pour chaque article son titre, sa catégorie, sa date de publication. Au survol d'une ligne, un menu <em>Modifier · Modification rapide · Corbeille · Voir</em> apparaît.</div>
 
     <div class="card">
-      <h4>Les 4 catégories utilisées</h4>
+      <h4>Les 7 catégories utilisées</h4>
       <dl class="kv">
         <dt>Actualités</dt><dd>Les 2 cards du haut de la <span class="xref" data-tab="pages" data-anchor="pages-accueil">page d'accueil</span>.</dd>
         <dt>Projets</dt><dd>3e card de la home (dernier concert) + page <span class="xref" data-tab="pages" data-anchor="pages-concerts">Nos concerts</span> (tous).</dd>
         <dt>Youtube</dt><dd>4e card de la home (dernière captation).</dd>
         <dt>Blog</dt><dd>Section blog de l'<span class="xref" data-tab="pages" data-anchor="pages-choriste">espace choriste</span>.</dd>
+        <dt>CA</dt><dd>Un article par membre du Conseil d'Administration, affiché sur la page <em>Le chœur</em>.</dd>
+        <dt>Programme</dt><dd>Programmes du semestre + récurrents (Conférence, Cérémonies), affichés sur l'<span class="xref" data-tab="pages" data-anchor="pages-choriste">espace choriste</span>.</dd>
+        <dt>Billetterie</dt><dd>Campagnes de billetterie ouvertes — affichées sur la home (filtrées par date de fin) et la page <span class="xref" data-tab="pages" data-anchor="pages-billetterie">Billetterie</span>.</dd>
       </dl>
+    </div>
+
+    <div class="callout info">
+      <strong>Architecture « content-driven »</strong>
+      Les 3 dernières catégories (<strong>CA</strong>, <strong>Programme</strong>, <strong>Billetterie</strong>) suivent une approche <em>content-driven</em> : tout le contenu visible sur le site est piloté depuis les articles, plus rien n'est codé en dur dans Elementor. Conséquence : quand un membre du CA part, qu'un nouveau programme commence ou qu'une billetterie ouvre, on ne touche <strong>plus jamais aux templates Elementor</strong> — on crée/modifie/dépublie un article et c'est tout. La passation devient triviale.
     </div>
 
     <h3 class="sub">Procédure générique d'ajout</h3>
@@ -2248,6 +2256,9 @@ function importEmailsToSheet() {
       <button class="inner-link" data-inner="inner-projets">Projets / Concerts</button>
       <button class="inner-link" data-inner="inner-youtube">Youtube</button>
       <button class="inner-link" data-inner="inner-blog">Blog</button>
+      <button class="inner-link" data-inner="inner-ca">CA</button>
+      <button class="inner-link" data-inner="inner-programme">Programme</button>
+      <button class="inner-link" data-inner="inner-billetterie">Billetterie</button>
     </nav>
 
     <div class="inner-panel active" id="inner-actualites">
@@ -2360,6 +2371,172 @@ function importEmailsToSheet() {
         Onglet <em>Les news du CA</em> de l'<span class="xref" data-tab="pages" data-anchor="pages-choriste">espace choriste</span>, dans la grille "Le fil info". Templates de card alternés : <code>Blog dark</code> (image en haut) et <code>Blog dark right</code> (image à droite) pour varier le rythme visuel.
       </div>
     </div>
+
+    <div class="inner-panel" id="inner-ca">
+      <h4 id="a-ca" style="margin:0 0 8px">CA</h4>
+      <p>Un article par membre du Conseil d'Administration. Chaque article décrit un rôle (Président, Trésorier, Membre…) avec le nom du titulaire et une photo. Quand le CA change, on crée / dépublie des articles — plus jamais besoin de toucher au design.</p>
+
+      <div class="card">
+        <h4>Structure typique</h4>
+        <dl class="kv">
+          <dt>Titre</dt><dd>Le <strong>rôle / statut</strong> (ex : « Président », « Trésorière adjointe », « Membre »). Affiché en grand sur la carte.</dd>
+          <dt>Extrait</dt><dd>Le <strong>nom complet</strong> du titulaire (ex : « Hubert Villuendas »). Affiché en plus petit sous le rôle.</dd>
+          <dt>Image mise en avant</dt><dd>La photo du membre (format carré ou portrait — uniforme dans la médiathèque <code>2025/01/Prenom_big.webp</code>).</dd>
+          <dt>Contenu Gutenberg</dt><dd>Vide. Aucun bouton ni détail supplémentaire sur la carte.</dd>
+          <dt>Catégorie</dt><dd>CA (id 16) uniquement.</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <h4>Ordre d'affichage</h4>
+        <p>L'ordre suit le champ natif WordPress <strong>menu_order</strong> — visible dans la sidebar Gutenberg sous <em>Attributs de page → Ordre</em>. Les valeurs actuelles vont par pas de 10 (Président=10, Présidente adjointe=20, … Membres=70-100). Pour insérer un nouveau membre entre deux existants, mettre une valeur intermédiaire (ex : 25). Plus petit = remonte dans la grille.</p>
+        <p style="margin-top:8px"><em>Le champ « Ordre » est visible grâce au snippet <span class="xref-wp" data-tab="admin" data-anchor="a-snippets-catalog">CUG — Exposer le champ Ordre</span></em>.</p>
+      </div>
+
+      <div class="callout info">
+        <strong>Où ça s'affiche</strong>
+        Sur la page publique <a href="https://cug38.fr/le-choeur/" target="_blank" rel="noopener"><code>/le-choeur/</code></a>, section <em>Le CA — Une équipe au top</em>. Le Loop Grid lit la catégorie CA et trie par <code>menu_order</code> croissant. Tous les membres publiés y apparaissent, dépubliés / mis en brouillon disparaissent.
+      </div>
+
+      <div class="callout warn">
+        <strong>Quand le CA évolue</strong>
+        Les actions courantes sont triviales : <strong>(1)</strong> dépublier l'article d'un membre qui part ; <strong>(2)</strong> dupliquer un article existant comme modèle, changer titre / extrait / photo / Ordre ; <strong>(3)</strong> publier. Pas d'intervention Elementor.
+      </div>
+    </div>
+
+    <div class="inner-panel" id="inner-programme">
+      <h4 id="a-programme" style="margin:0 0 8px">Programme</h4>
+      <p>Un article par programme : <em>2 programmes par semestre</em> (un par concert majeur) + 2 programmes récurrents (<em>Conférence</em>, <em>Cérémonies</em>). Chaque programme expose ses ressources de travail aux choristes via 4 custom fields (playlist YouTube, dossier Musescore, livret PDF, MP3s).</p>
+
+      <div class="card">
+        <h4>Structure typique</h4>
+        <dl class="kv">
+          <dt>Titre</dt><dd>Nom du programme. Convention : commence toujours par <em>Programme</em> (ex : « Programme 2025/2026 — Semestre 2 », « Programme Conférence », « Programme Cérémonies »).</dd>
+          <dt>Extrait</dt><dd>Sous-titre / nom de l'œuvre (ex : « Materia Symphony et autres musiques de jeux vidéo », « Conférence-concert pour les 80 ans du CUG »).</dd>
+          <dt>Image mise en avant</dt><dd>Affiche du programme (facultatif).</dd>
+          <dt>Contenu Gutenberg</dt><dd>Bloc H4 (titre de l'œuvre, redondance avec l'extrait mais utile pour le rendu) + un paragraphe descriptif avec liens (compositeur, partenaires, lieu, dates).</dd>
+          <dt>Custom fields</dt><dd>4 champs URL listés ci-dessous (voir <em>Particularité</em>).</dd>
+          <dt>Catégorie</dt><dd>Programme (id 17) uniquement.</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <h4>Particularité : 4 custom fields pilotent les boutons / iframe</h4>
+        <p>Chaque article Programme a 4 champs personnalisés (sidebar Gutenberg, panneau <em>Champs personnalisés</em>) — vides = bouton/section cachée automatiquement.</p>
+        <dl class="kv">
+          <dt><code>programme_youtube_playlist</code></dt><dd>L'<strong>ID</strong> de la playlist YouTube (juste la partie après <code>list=</code>, ex : <code>PLOBYAQqxTzUoVLxTr1IQoFqwNzys-A_7W</code>) — pas l'URL complète.</dd>
+          <dt><code>programme_musescore</code></dt><dd>URL du dossier Drive ou page ens-lyon avec les fichiers Musescore.</dd>
+          <dt><code>programme_livret_pdf</code></dt><dd>URL du livret PDF (Drive ou IMSLP).</dd>
+          <dt><code>programme_mp3s</code></dt><dd>URL du dossier MP3s.</dd>
+        </dl>
+        <p style="margin-top:8px">Ces champs sont enregistrés (REST + UI Gutenberg) par le snippet <span class="xref-wp" data-tab="admin" data-anchor="a-snippets-catalog">CUG — Enregistrer les custom fields content-driven</span>.</p>
+      </div>
+
+      <div class="card">
+        <h4>Shortcodes disponibles dans le Loop Item Programme</h4>
+        <dl class="kv">
+          <dt><code>[programme_youtube_playlist]</code></dt><dd>Construit l'URL publique <code>https://www.youtube.com/playlist?list=…</code> à partir de l'ID stocké.</dd>
+          <dt><code>[programme_youtube_playlist_embed]</code></dt><dd>Rend un <code>&lt;iframe&gt;</code> YouTube prêt à l'emploi (560×315 par défaut). Mettre dans un widget <em>Shortcode</em> Elementor. Override dimensions : <code>[programme_youtube_playlist_embed width="800" height="450"]</code>.</dd>
+          <dt><code>[programme_musescore]</code> · <code>[programme_livret_pdf]</code> · <code>[programme_mp3s]</code></dt><dd>Renvoient simplement l'URL stockée. À utiliser comme <em>balise dynamique Shortcode</em> sur le champ URL d'un widget Bouton.</dd>
+        </dl>
+      </div>
+
+      <div class="callout info">
+        <strong>Où ça s'affiche</strong>
+        Sur l'<span class="xref" data-tab="pages" data-anchor="pages-choriste">Espace choriste</span> → onglet <em>Le programme</em> (en cours) et <em>Anciens programmes</em> (archives). Le Loop Grid Programme tourne sur le template <em>Programme</em> (post id 3073).
+      </div>
+
+      <div class="callout warn">
+        <strong>Affichage conditionnel des cartes (Musescore / MP3s / Livret / YouTube)</strong>
+        Chaque sous-carte se cache automatiquement si son champ est vide, grâce au pattern <code>cug-cond</code> / <code>cug-cond-host</code> : la sous-carte porte la classe <code>cug-cond-host</code>, et embarque un widget Shortcode invisible (<code>cug-cond</code>) qui renvoie l'URL via <code>[programme_xxx]</code>. Si vide, le CSS <code>:has(:empty)</code> cache la carte. Le snippet <span class="xref-wp" data-tab="admin" data-anchor="a-snippets-catalog">CUG — Shortcode [hide_if_empty]</span> documente l'alternative classe-CSS-dynamique.
+      </div>
+
+      <div class="callout info">
+        <strong>Ordre / programme actuel</strong>
+        Le « programme en cours » = celui dont la <em>date de publication</em> est la plus récente. Pour faire passer un nouveau programme en avant, on lui met une date de publication aujourd'hui ou plus tard. Les Loop Grids triés par <code>date DESC</code> font automatiquement remonter le bon programme.
+      </div>
+    </div>
+
+    <div class="inner-panel" id="inner-billetterie">
+      <h4 id="a-billetterie-cat" style="margin:0 0 8px">Billetterie</h4>
+      <p>Un article par campagne de billetterie. Chaque campagne a un titre, une affiche, une description (avec les boutons HelloAsso pour les différentes sessions), une carte du lieu, et surtout une <strong>date de fin</strong> qui détermine si elle s'affiche encore sur la home.</p>
+
+      <div class="card">
+        <h4>Structure typique</h4>
+        <dl class="kv">
+          <dt>Titre</dt><dd>Nom court du concert (ex : « Materia Symphony »).</dd>
+          <dt>Extrait</dt><dd>Sous-titre (ex : « et autres musiques de jeux vidéos »).</dd>
+          <dt>Image mise en avant</dt><dd>L'affiche du concert (média ID typique : <code>2026/03/Affiche-XXX.jpg</code>).</dd>
+          <dt>Contenu Gutenberg</dt><dd>Heading H4 (titre œuvre) + paragraphes descriptifs + bloc de <strong>boutons HelloAsso</strong> (un par session, alignés en flex centré).</dd>
+          <dt>Custom fields</dt><dd><code>date_fin</code> (date YYYY-MM-DD jusqu'à laquelle la campagne reste visible sur la home) ; <code>event_map</code> (nom du lieu pour la carte Google Maps, ex : « Espace Bergès Villard-Bonnot »).</dd>
+          <dt>Catégorie</dt><dd>Billetterie (id 18) uniquement.</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <h4>Particularité : filtrage automatique par <code>date_fin</code></h4>
+        <p>Le Loop Grid sur la home utilise le <strong>Query ID</strong> <code>billetterie_active</code> (paramétré dans la requête du widget). Le snippet <span class="xref-wp" data-tab="admin" data-anchor="a-snippets-catalog">CUG — Filtre Loop Grid billetterie_active</span> hooke sur cette query et ne garde que les articles dont <code>date_fin &gt;= aujourd'hui</code>. Donc une campagne dont le concert est passé disparaît automatiquement de la home, sans intervention manuelle.</p>
+        <p style="margin-top:8px">Le placeholder « Pas de billetterie ouverte → inscrivez-vous à la newsletter » apparaît à la place via le pattern sentinelle <code>cug-cond-host</code> + shortcode <code>[no_active_billetterie]</code> (voir <em>Avancé</em>).</p>
+      </div>
+
+      <div class="card">
+        <h4>Carte du lieu</h4>
+        <p>Le shortcode <code>[event_map_embed]</code> lit le custom field <code>event_map</code> et rend un iframe Google Maps. Le champ accepte 3 formats :</p>
+        <ul>
+          <li><strong>Un nom de lieu</strong> (ex : « Espace Bergès Villard-Bonnot ») → le shortcode construit l'URL <code>maps.google.com/maps?q=…&amp;output=embed</code> avec pin rouge. <strong>Préféré</strong> car simplissime.</li>
+          <li>Une URL Google Maps complète (<code>https://www.google.com/maps/embed?pb=…</code>).</li>
+          <li>Le fragment <code>!1m18!…</code> ou <code>pb=…</code> seul — le shortcode préfixe.</li>
+        </ul>
+        <p style="margin-top:8px">Dimensions par défaut : 400 × 200. Override : <code>[event_map_embed width="100%" height="350"]</code>.</p>
+      </div>
+
+      <div class="callout info">
+        <strong>Où ça s'affiche</strong>
+        <strong>Home</strong> : Loop Grid filtré par <code>billetterie_active</code> qui ne montre que la campagne en cours (placeholder newsletter à la place si rien d'actif). <strong>Page Billetterie</strong> : Loop Grid non filtré, affiche la campagne quelle que soit la date.
+      </div>
+
+      <div class="callout warn">
+        <strong>Quand une billetterie ouvre / ferme</strong>
+        <strong>Ouverture</strong> : dupliquer un article billetterie existant comme modèle, remplacer titre / affiche / description / URLs HelloAsso / date_fin / event_map → publier. <strong>Fermeture automatique</strong> : rien à faire. Quand <code>date_fin</code> est dépassée, la campagne disparaît de la home (apparaît toujours en archives sur la page Billetterie). On peut aussi simplement dépublier l'article pour cacher partout.
+      </div>
+    </div>
+
+    <details class="advanced" id="a-snippets-catalog">
+      <summary><span class="pill">Avancé</span>Catalogue des snippets content-driven</summary>
+
+      <p>Tous les snippets ci-dessous vivent dans <strong>Snippets → Tous les extraits</strong>. Ils doivent être <strong>actifs</strong> pour fonctionner. Désactiver un snippet casse uniquement la fonctionnalité associée — pas le site.</p>
+
+      <h4 style="margin-top:18px">Enregistrement des custom fields</h4>
+      <dl class="kv">
+        <dt>CUG — Enregistrer les custom fields content-driven</dt><dd>Enregistre <code>programme_youtube_playlist</code>, <code>programme_musescore</code>, <code>programme_livret_pdf</code>, <code>programme_mp3s</code>, <code>date_fin</code>, <code>event_map</code> avec <code>show_in_rest=true</code>. Permet de les éditer dans Gutenberg (panneau Custom Fields) et de les setter via REST.</dd>
+        <dt>CUG — Exposer le champ Ordre (menu_order)</dt><dd>Active <code>page-attributes</code> sur les articles pour faire apparaître le champ <em>Ordre</em> dans la sidebar Gutenberg. Essentiel pour ordonner manuellement les cartes CA.</dd>
+      </dl>
+
+      <h4 style="margin-top:18px">Shortcodes Programme</h4>
+      <dl class="kv">
+        <dt><code>[programme_youtube_playlist]</code></dt><dd>Renvoie l'URL publique de la playlist YouTube (construite depuis l'ID stocké). À utiliser comme URL d'un widget Bouton via balise dynamique <em>Shortcode</em>.</dd>
+        <dt><code>[programme_youtube_playlist_embed]</code></dt><dd>Renvoie un <code>&lt;iframe&gt;</code> YouTube prêt à l'emploi. Attributs : <code>width</code> (def. 560), <code>height</code> (def. 315), <code>id</code> (article spécifique, sinon get_the_ID).</dd>
+        <dt><code>[programme_musescore]</code> · <code>[programme_livret_pdf]</code> · <code>[programme_mp3s]</code></dt><dd>Renvoient l'URL stockée dans le custom field correspondant.</dd>
+      </dl>
+
+      <h4 style="margin-top:18px">Filtre Loop Grid Billetterie</h4>
+      <dl class="kv">
+        <dt>CUG — Filtre Loop Grid billetterie_active</dt><dd>Hook PHP sur <code>elementor/query/billetterie_active</code>. Quand le widget Loop Grid a son <em>Query ID</em> réglé sur <code>billetterie_active</code>, ce filtre limite les résultats aux articles Billetterie dont <code>date_fin &gt;= aujourd'hui</code>, triés par <code>date_fin</code> croissante.</dd>
+        <dt><code>[no_active_billetterie]</code></dt><dd>Sentinelle pour le placeholder. Renvoie <code>·</code> s'il n'y a aucune billetterie active, chaîne vide sinon. À utiliser dans le pattern <code>cug-cond</code> / <code>cug-cond-host</code> : container placeholder (newsletter) avec classe <code>cug-cond-host</code>, widget Shortcode dedans avec <code>[no_active_billetterie]</code> et classe <code>cug-cond</code>. Le CSS global cache le container si la sentinelle est <code>:empty</code>.</dd>
+      </dl>
+
+      <h4 style="margin-top:18px">Affichage conditionnel (utilitaires)</h4>
+      <dl class="kv">
+        <dt>Pattern sentinelle <code>cug-cond</code> / <code>cug-cond-host</code></dt><dd>Pour cacher un container quand un custom field est vide : le container porte <code>cug-cond-host</code>, contient un widget Shortcode invisible (classe <code>cug-cond</code>) qui rend le shortcode lisant le champ (<code>[programme_mp3s]</code>, etc.). Si le champ est vide → sortie vide → CSS <code>:has(:empty)</code> cache le container.</dd>
+        <dt><code>[hide_if_empty name="…"]</code></dt><dd>Alternative au pattern sentinelle, sous forme de balise dynamique <em>CSS Classes</em>. Renvoie <code>cug-hidden</code> si le champ est vide, chaîne vide sinon. Utiliser dans CSS Classes d'un widget / container avec une balise dynamique Shortcode. Le CSS global <code>.cug-hidden { display: none !important; }</code> fait le reste.</dd>
+        <dt><code>[if_field name="…"]…[/if_field]</code></dt><dd>Shortcode wrapper. Rend le contenu interne uniquement si le champ est non-vide (ou selon l'opérateur). Pratique dans un widget HTML pour wrapper un bouton ou un iframe.</dd>
+      </dl>
+
+      <h4 style="margin-top:18px">Carte Google Maps</h4>
+      <dl class="kv">
+        <dt><code>[event_map_embed]</code></dt><dd>Rend un iframe Google Maps depuis le champ <code>event_map</code> (nom de lieu OU URL embed). Pin rouge garanti avec le mode « nom de lieu ». Attributs : <code>width</code> (def. 400), <code>height</code> (def. 200), <code>url</code> (override), <code>field</code> (custom field name).</dd>
+      </dl>
+    </details>
   </div>
 
   <div class="sub-panel" id="a-menus">
